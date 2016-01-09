@@ -5,10 +5,8 @@
   <groupId>com.restfull.example</groupId>
   <artifactId>spring-angular-restfull</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
-
   <name>spring-angular-restfull</name>
-  <url>http://maven.apache.org</url>
+  <packaging>war</packaging>
 
   <properties>
   	<java.version>1.8</java.version>
@@ -17,12 +15,31 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
   </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+  	<parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.3.1.RELEASE</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-tomcat</artifactId>
+	        <scope>provided</scope>
+	    </dependency>
+    </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    
 </project>
